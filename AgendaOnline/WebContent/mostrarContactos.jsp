@@ -1,7 +1,7 @@
 <%@page import="paqueteservletagenda.Contacto"%>
 <%@page import="paqueteservletagenda.AccesoBD"%>
 <%@page import="paqueteservletagenda.CreaHTML"%>
-<%@page import="java.util.ArrayList;" %>
+<%@page import="java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
