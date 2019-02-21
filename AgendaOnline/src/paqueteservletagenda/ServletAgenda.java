@@ -33,7 +33,7 @@ public class ServletAgenda extends HttpServlet {
 		if (accion.equals("listar"))
 		{
 			//Recuperar los contactos
-			ArrayList<Contacto> lista=AccesoBD.devolverContactos();
+			ArrayList<Contacto> lista=AccesoBD.listarContactos();
 			//Mandarselos a la vista (mostrarContactos.jsp)
 			request.setAttribute("lista", lista);
 			request.getRequestDispatcher("mostrarContactos.jsp").forward(request, response);
