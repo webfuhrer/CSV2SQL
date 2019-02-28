@@ -66,6 +66,7 @@ public class Parseador {
 		{
 			String nombre_etiqueta="";
 			nombre_etiqueta=(i<10)?"0"+i:String.valueOf(i);
+			//IF(condicion;si_se_cumple;si_no__se_cumple)
 			Element elemento_horario=element.getChild("H"+nombre_etiqueta);
 			float a=Float.parseFloat(elemento_horario.getValue());
 			lista_cantidades.add(a);

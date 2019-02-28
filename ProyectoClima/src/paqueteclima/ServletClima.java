@@ -28,10 +28,24 @@ public class ServletClima extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String accion=request.getParameter("accion");
 		String xml_contaminacion=PeticionWeb.pedirWeb("http://www.mambiente.munimadrid.es/opendata/horario.xml");
 		ArrayList<DatoHorario> datos=Parseador.parsear(xml_contaminacion);
-		request.setAttribute("datos_horarios", datos);
-		request.getRequestDispatcher("mostrar_clima.jsp").forward(request, response);
+		if (accion.equals("vertabla"))
+		{
+			//Pedir el string xml de contaminacion
+			request.setAttribute("datos_horarios", datos);
+			request.getRequestDispatcher("mostrar_clima.jsp").forward(request, response);
+			
+		}
+		else //Grabar en MySQL
+		{
+		AccesoBD.grabarDatos(datos);
+		}
+		
+		
+		//Grabo los datos en MySQL
+		
 	}
 
 	/**

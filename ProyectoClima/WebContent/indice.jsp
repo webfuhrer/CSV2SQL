@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="ServletClima">Ir al Servlet</a>
+<a href="ServletClima?accion=vertabla">Ver tabla html</a>
+<br>
+<a href="ServletClima?accion=grabardatos">Grabar datos en MySQL</a>
 </body>
 </html>

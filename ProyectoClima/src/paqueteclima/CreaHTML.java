@@ -7,11 +7,11 @@ int a=9;
 	public static String pintarTabla(ArrayList<DatoHorario> datos) {
 		
 		
-		String tabla="<table><tr><th>Estacion</th><th>Magnitud</th><th>Fecha</th>"+horas()+"</tr>";
+		String tabla="<table border=1><tr><th>Estacion</th><th>Magnitud</th><th>Fecha</th>"+horas()+"</tr>";
 		// TODO Auto-generated method stub
 		for (DatoHorario datoHorario : datos) {
 			tabla+="<tr><td>"+datoHorario.getEstacion()+"</td><td>"+datoHorario.getMagnitud()+
-					"</td><td>"+datoHorario.getFecha()+"</td><td>"+datos(datoHorario.getCantidades())+"</tr>";
+					"</td><td>"+datoHorario.getFecha()+"</td>"+datos(datoHorario.getCantidades())+"</tr>";
 		}
 		tabla+="</table>";
 		return tabla;
@@ -25,7 +25,7 @@ int a=9;
 	}
 	private static String horas()
 	{String aux="";
-		for(int i=0; i<23; i++)
+		for(int i=0; i<24; i++)
 		{
 			aux+="<th>"+i+"-"+(i+1)+"</th>";
 		}
