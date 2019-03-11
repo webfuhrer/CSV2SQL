@@ -1,5 +1,6 @@
 package paquetenotas;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class NotasAlumno {
@@ -7,7 +8,8 @@ public class NotasAlumno {
 	public static void main(String[] args) {
 		int opcion=Consola.pedirOpciones();
 		//Leer fichero
-		ArrayList<Alumno> lista_alumnos=AccesoFichero.recuperarAlumnos(); 
+		ArrayList<Alumno> lista_alumnos=AccesoFichero.recuperarAlumnos();
+		
 		while(opcion!=3)
 		{
 				switch (opcion)
@@ -22,6 +24,8 @@ public class NotasAlumno {
 					break;
 				case 4:
 					//Exportar a MySQL
+					DatosBD datos=Consola.pedirDatosBD();
+					AccesoBD.insertarNotas(lista_alumnos, datos);
 					System.out.println("Opcion4");
 					break;
 				}

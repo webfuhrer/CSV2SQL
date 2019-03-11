@@ -97,4 +97,16 @@ public static String devolverAsignaturaPorNumero(int numero)
 		String aux=mapa.get(numero);
 		return aux;
 	}
+
+public static DatosBD pedirDatosBD() {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Usuario de la bd:");
+	String usuario_bd=sc.nextLine();
+	System.out.println("Password de la bd:");
+	String pwd_bd=sc.nextLine();
+	System.out.println("Nombre de la bd:");
+	String nombre_bd=sc.nextLine();
+	DatosBD datos=new DatosBD(usuario_bd, pwd_bd, nombre_bd);
+	return datos;
+}
 }

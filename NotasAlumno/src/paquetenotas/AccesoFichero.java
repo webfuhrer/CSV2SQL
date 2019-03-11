@@ -10,10 +10,10 @@ import java.util.ArrayList;
 public class AccesoFichero {
 private static String ruta="alumnos.csv";
 private static String separador=",";
-	public static ArrayList<Alumno> recuperarAlumnos()  {
+	public static ArrayList<Alumno> recuperarAlumnos() throws IOException  {
 		// TODO Auto-generated method stub
 		ArrayList<Alumno> lista_alumnos=new ArrayList();
-		try {
+		
 			String linea="";
 			FileReader fr=new FileReader(ruta);
 			BufferedReader br=new BufferedReader(fr);
@@ -28,13 +28,7 @@ private static String separador=",";
 				lista_alumnos.add(a);
 				linea=br.readLine();
 			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
 		
 		
 		return lista_alumnos;
